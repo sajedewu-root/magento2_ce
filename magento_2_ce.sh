@@ -9,10 +9,25 @@ echo "      Please give a me a folder name to download the Magento 2 CE in the r
 echo ""
 echo ""
 echo "**********************************************************************************************"
+echo ""
+echo "Magento2 Edition:  --  "
+read MA_EDI
+echo ""
+echo ""
+echo ""
+echo "**********************************************************************************************"
+echo ""
+echo ""
+echo "      Please give a me a folder name to download the Magento 2 CE in the root directory       "
+echo ""
+echo ""
+echo "**********************************************************************************************"
+echo ""
+echo "Folder name:  --  "
 read DIR_NAME
 
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-composer create-project --repository=https://repo.magento.com/ magento/project-community-edition $DIR_NAME
+composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
 
 chmod -R 777 /var/
 chown -R www-data:www-data /var/www/html/
