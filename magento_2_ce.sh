@@ -2,26 +2,26 @@
 
 cd /var/www/html/
 
-echo "**********************************************************************************************"
+echo "*************************************************************************************************"
 echo ""
 echo ""
-echo "      Please give a me a folder name to download the Magento 2 CE in the root directory       "
+echo "      Please give a me a Version Number to download the Magento 2 CE in the root directory       "
 echo ""
 echo ""
-echo "**********************************************************************************************"
+echo "*************************************************************************************************"
 echo ""
 echo "Magento2 Edition:  --  "
 read MA_EDI
 echo ""
 echo ""
 echo ""
-echo "**********************************************************************************************"
+echo "************************************************************************************************"
 echo ""
 echo ""
-echo "      Please give a me a folder name to download the Magento 2 CE in the root directory       "
+echo "      Please give a me a folder name to download the Magento 2 CE in the root directory         "
 echo ""
 echo ""
-echo "**********************************************************************************************"
+echo "************************************************************************************************"
 echo ""
 echo "Folder name:  --  "
 read DIR_NAME
