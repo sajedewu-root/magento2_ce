@@ -59,3 +59,4 @@ php bin/magento cron:install
 php bin/magento setup:upgrade
 
 chmod -R 777 /var/
+clear
