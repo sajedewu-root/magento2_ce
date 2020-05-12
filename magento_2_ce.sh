@@ -56,7 +56,8 @@ read Enter
 cd /var/www/html/$DIR_NAME/
 php bin/magento indexer:reindex
 php bin/magento cron:install
-php bin/magento setup:upgrade
+# composer update
+# php bin/magento setup:upgrade
 
 chmod -R 777 /var/
 clear
