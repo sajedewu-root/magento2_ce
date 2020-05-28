@@ -10,8 +10,7 @@ echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
-echo "Magento2 Edition:  --  "
-read MA_EDI
+echo -n -e "\e[1;33mMagento2 Edition:  -- \e[0m "; read CREATE_USER_NAME; read MA_EDI
 echo ""
 echo ""
 echo ""
@@ -23,8 +22,7 @@ echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
-echo "Folder name:  --  "
-read DIR_NAME
+echo -n -e "\e[1;33mFolder name:  -- \e[0m "; read CREATE_USER_NAME; read MA_EDI; read DIR_NAME
 
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
