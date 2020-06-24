@@ -5,7 +5,7 @@ cd /var/www/html/
 echo "***************************************************************************************************"
 echo ""
 echo ""
-echo -e "\e[1;32mPlease give a me a Version Number to download the Magento 2 CE in the root directory  \e[0m"
+echo -e "\e[1;32mPlease give a me a Version Number to download the Magento 2 CE in the root directory\e[0m"
 echo ""
 echo ""
 echo "***************************************************************************************************"
