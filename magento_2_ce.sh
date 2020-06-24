@@ -10,8 +10,17 @@ echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
-echo -n -e "\e[1;33mMagento2 Edition:  -- \e[0m "; read MA_EDI
 echo ""
+echo -e "\e[1;33mMagento2 Public Key:  -- \e[0m "; read MAGENTO_PUBLIC_KEY
+echo ""
+echo ""
+echo -e "\e[1;33mMagento2 Private Key:  -- \e[0m "; read MAGENTO_PRIVATE_KEY
+echo ""
+echo ""
+echo "***************************************************************************************************"
+echo ""
+echo ""
+echo -e "\e[1;33mMagento2 Edition:  -- \e[0m "; read MA_EDI
 echo ""
 echo ""
 echo "***************************************************************************************************"
@@ -22,9 +31,15 @@ echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
+echo ""
 echo -n -e "\e[1;33mFolder name:  -- \e[0m "; read DIR_NAME
+echo ""
+echo ""
 
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
+
+composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
 
 chmod -R 777 /var/
