@@ -11,16 +11,16 @@ echo ""
 echo "***************************************************************************************************"
 echo ""
 echo ""
-echo -e "\e[1;33mMagento2 Public Key:  -- \e[0m "; read MAGENTO_PUBLIC_KEY
+echo -n -e "\e[1;33mMagento2 Public Key:  -- \e[0m "; read MAGENTO_PUBLIC_KEY
 echo ""
 echo ""
-echo -e "\e[1;33mMagento2 Private Key:  -- \e[0m "; read MAGENTO_PRIVATE_KEY
+echo -n -e "\e[1;33mMagento2 Private Key:  -- \e[0m "; read MAGENTO_PRIVATE_KEY
 echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
 echo ""
-echo -e "\e[1;33mMagento2 Edition:  -- \e[0m "; read MA_EDI
+echo -n -e "\e[1;33mMagento2 Edition:  -- \e[0m "; read MA_EDI
 echo ""
 echo ""
 echo "***************************************************************************************************"
