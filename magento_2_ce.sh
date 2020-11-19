@@ -52,7 +52,13 @@ systemctl start apache2.service
 systemctl enable apache2.service
 
 chmod 777 -R /var/
-
+echo "************************************************************************"
+echo ""
+echo "Magento 2 Command Line installation process" 
+echo ""
+echo "************************************************************************"
+echo ""
+echo ""
 echo -n -e "\e[1;33mMagento URL                  : -- \e[0m ";  read URL
 echo -n -e "\e[1;33mDatabase Host Name           : -- \e[0m ";  read DB_HOST_NAME
 echo -n -e "\e[1;33mDatabase Name                : -- \e[0m ";  read DB_NAME 
@@ -66,6 +72,9 @@ echo -n -e "\e[1;33mAdministrator User Password  : -- \e[0m ";  read DB_ADMIN_PA
 echo -n -e "\e[1;33mLanguage                     : -- \e[0m ";  read LANG
 echo -n -e "\e[1;33mCurrency Ex. USD             : -- \e[0m ";  read CURR
 echo -n -e "\e[1;33mTimezone Ex. America/Chicago : -- \e[0m ";  read TIME_ZONE
+echo ""
+echo ""
+
 
 magento setup:install --base-url=http://$URAmerica/ChicagoL/ \
 --db-host=$DB_HOST_NAME \
