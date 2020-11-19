@@ -52,6 +52,39 @@ systemctl start apache2.service
 systemctl enable apache2.service
 
 chmod 777 -R /var/
+
+echo -n -e "\e[1;33mMagento URL                  : -- \e[0m ";  read URL
+echo -n -e "\e[1;33mDatabase Host Name           : -- \e[0m ";  read DB_HOST_NAME
+echo -n -e "\e[1;33mDatabase Name                : -- \e[0m ";  read DB_NAME 
+echo -n -e "\e[1;33mDatabase User                : -- \e[0m ";  read DB_USER_ID
+echo -n -e "\e[1;33mDatabse Passowrd             : -- \e[0m ";  read DB_PASSWORD
+echo -n -e "\e[1;33mAdministrator First Name     : -- \e[0m ";  read DB_ADMIN_FNAME
+echo -n -e "\e[1;33mAdministrator Last Name      : -- \e[0m ";  read DB_ADMIN_LNAME
+echo -n -e "\e[1;33mAdministrator Emaill Address : -- \e[0m ";  read DB_ADMIN_EMAIL
+echo -n -e "\e[1;33mAdministrator User Id        : -- \e[0m ";  read DB_ADMIN_ID
+echo -n -e "\e[1;33mAdministrator User Password  : -- \e[0m ";  read DB_ADMIN_PASSWORD
+echo -n -e "\e[1;33mLanguage                     : -- \e[0m ";  read LANG
+echo -n -e "\e[1;33mCurrency                     : -- \e[0m ";  read CURR
+echo -n -e "\e[1;33mTimezone                     : -- \e[0m ";  read TIME_ZONE
+
+magento setup:install --base-url=http://$URL/ \
+--db-host=$DB_HOST_NAME \
+--db-name=$DB_NAME \
+--db-user=$DB_USER_ID \
+--db-password=$DB_PASSWORD \
+--admin-firstname=$DB_ADMIN_FNAME \
+--admin-lastname=$DB_ADMIN_LNAME \
+--admin-email=$DB_ADMIN_EMAIL \
+--admin-user=$DB_ADMIN_ID \
+--admin-password=$DB_ADMIN_PASSWORD \
+--language=$LANG \
+--currency=$CURR \
+--timezone=$TIME_ZONE \
+--use-rewrites=1 \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=es-host.example.com \
+--elasticsearch-port=9200
+
 echo ""
 echo ""
 echo "***************************************************************************************************"
