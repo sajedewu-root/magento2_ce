@@ -64,10 +64,10 @@ echo -n -e "\e[1;33mAdministrator Emaill Address : -- \e[0m ";  read DB_ADMIN_EM
 echo -n -e "\e[1;33mAdministrator User Id        : -- \e[0m ";  read DB_ADMIN_ID
 echo -n -e "\e[1;33mAdministrator User Password  : -- \e[0m ";  read DB_ADMIN_PASSWORD
 echo -n -e "\e[1;33mLanguage                     : -- \e[0m ";  read LANG
-echo -n -e "\e[1;33mCurrency                     : -- \e[0m ";  read CURR
-echo -n -e "\e[1;33mTimezone                     : -- \e[0m ";  read TIME_ZONE
+echo -n -e "\e[1;33mCurrency Ex. USD             : -- \e[0m ";  read CURR
+echo -n -e "\e[1;33mTimezone Ex. America/Chicago : -- \e[0m ";  read TIME_ZONE
 
-magento setup:install --base-url=http://$URL/ \
+magento setup:install --base-url=http://$URAmerica/ChicagoL/ \
 --db-host=$DB_HOST_NAME \
 --db-name=$DB_NAME \
 --db-user=$DB_USER_ID \
