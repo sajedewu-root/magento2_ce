@@ -49,6 +49,8 @@ systemctl start apache2.service
 systemctl enable apache2.service
 
 chmod 777 -R /var/
+cd /var/www/html/$DIR_NAME
+
 echo "************************************************************************"
 echo ""
 echo -n -e "Magento 2 Command Line installation process   : -- \e[0m " 
