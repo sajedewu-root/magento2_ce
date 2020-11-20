@@ -5,7 +5,7 @@ cd /var/www/html/
 echo "***************************************************************************************************"
 echo ""
 echo ""
-echo -e "\e[1;32mPlease give a me a Version Number to download the Magento 2 CE in the root directory\e[0m"
+echo -n -e "\e[1;32mPlease give a me a Version Number to download the Magento 2 CE in the root directory\e[0m"
 echo ""
 echo ""
 echo "***************************************************************************************************"
@@ -34,9 +34,6 @@ echo ""
 echo -n -e "\e[1;33mFolder name:  -- \e[0m ";          read DIR_NAME
 echo ""
 echo ""
-
-# curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
 
 composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
@@ -94,12 +91,13 @@ magento setup:install --base-url=http://$URAmerica/ChicagoL/ \
 --elasticsearch-host=es-host.example.com \
 --elasticsearch-port=9200
 
+
 echo ""
 echo ""
 echo "***************************************************************************************************"
 echo ""
 echo ""
-echo -e "\e[1;32mAfter complete the installation, \e[1;33mPlease press Enter \e[0m"
+echo -n -e "\e[1;32mAfter complete the installation, \e[1;33mPlease press Enter \e[0m"
 echo ""
 echo ""
 echo "***************************************************************************************************"
