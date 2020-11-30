@@ -49,7 +49,7 @@ systemctl start apache2.service
 systemctl enable apache2.service
 
 chmod 777 -R /var/
-cd /var/www/html/$DIR_NAME
+cd /var/www/html/$DIR_NAME/
 
 echo "************************************************************************"
 echo ""
@@ -75,7 +75,7 @@ echo ""
 echo ""
 
 
-bin/magento setup:install --base-url=http://$URAmerica/ChicagoL/ \
+bin/magento setup:install --base-url=http://$URAmerica/ma/ \
 --db-host=$DB_HOST_NAME \
 --db-name=$DB_NAME \
 --db-user=$DB_USER_ID \
@@ -88,10 +88,7 @@ bin/magento setup:install --base-url=http://$URAmerica/ChicagoL/ \
 --language=$LANG \
 --currency=$CURR \
 --timezone=$TIME_ZONE \
---use-rewrites=1 \
---search-engine=elasticsearch7 \
---elasticsearch-host=es-host.example.com \
---elasticsearch-port=9200
+--use-rewrites=1
 
 
 echo ""
