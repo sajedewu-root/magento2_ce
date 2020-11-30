@@ -75,7 +75,7 @@ echo ""
 echo ""
 
 
-bin/magento setup:install --base-url=http://$URAmerica/ma/ \
+bin/magento setup:install --base-url=http://$URL/$DIR_NAME/ \
 --db-host=$DB_HOST_NAME \
 --db-name=$DB_NAME \
 --db-user=$DB_USER_ID \
