@@ -109,6 +109,7 @@ php bin/magento indexer:reindex
 php bin/magento cron:install
 # composer update
 # php bin/magento setup:upgrade
+php bin/magento module:disable Magento_TwoFactorAuth
 
 chmod -R 777 /var/
 clear
