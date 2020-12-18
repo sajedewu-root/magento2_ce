@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Based on this script, we can install Elasticsearch in the system
+# Here, we will install all the packages for Elasticsearch in the system.
+# Install Elasticsearch in the linux (Ubuntu 20)
+
 apt-get install openjdk-8-jdk -y
 
 java -version
@@ -16,4 +20,12 @@ sudo systemctl start elasticsearch
 
 curl -X GET "localhost:9200/?pretty"
 
+cd /etc/elasticsearch
+
+sed -i 's,^# cluster.name:.*$,cluster.name: Magento Cluster,' elasticsearch.yml
+sed -i 's,^# node.name:.*$,node.name: Magento Node,' elasticsearch.yml
+sed -i 's,^# network.host:.*$,network.host: localhost,' elasticsearch.yml
+
 sudo systemctl restart elasticsearch
+
+curl -X GET "localhost:9200/?pretty"
