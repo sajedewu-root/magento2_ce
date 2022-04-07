@@ -74,20 +74,22 @@ echo -n -e "\e[1;33mTimezone Ex. America/Chicago  :  -- \e[0m ";  read TIME_ZONE
 echo ""
 
 
-bin/magento setup:install --base-url=http://$URL/$DIR_NAME/ \
---db-host=$DB_HOST_NAME \
---db-name=$DB_NAME \
---db-user=$DB_USER_ID \
---db-password=$DB_PASSWORD \
---admin-firstname=$DB_ADMIN_FNAME \
---admin-lastname=$DB_ADMIN_LNAME \
---admin-email=$DB_ADMIN_EMAIL \
---admin-user=$DB_ADMIN_ID \
---admin-password=$DB_ADMIN_PASSWORD \
---language=$LANG \
---currency=$CURR \
---timezone=$TIME_ZONE \
---use-rewrites=1
+php bin/magento setup:install 
+--base-url="http://$URL/$DIR_NAME/" \
+--db-host="$DB_HOST_NAME" \
+--db-name="$DB_NAME" \
+--db-user="$DB_USER_ID" \
+--db-password="$DB_PASSWORD" \
+--admin-firstname="$DB_ADMIN_FNAME" \
+--admin-lastname="$DB_ADMIN_LNAME" \
+--admin-email="$DB_ADMIN_EMAIL" \
+--admin-user="$DB_ADMIN_ID" \
+--admin-password="$DB_ADMIN_PASSWORD" \
+--language="$LANG" \
+--currency="$CURR" \
+--timezone="$TIME_ZONE" \
+--use-rewrites="1" \
+--backend-frontname="admin"
 
 echo "***************************************************************************************************"
 echo ""
