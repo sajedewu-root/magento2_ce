@@ -30,8 +30,15 @@ php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo '
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 composer
 
-if [-z "$MA_EDI"]
-  then
+
+cd /var/www/html/$DIR_NAME
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+chown -R :www-data . # Ubuntu
+chmod u+x bin/magento
+
+if [-z "$MA_EDI"];
+  then 
     composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
     composer create-project --repository=https://repo.magento.com/ magento/project-community-edition $DIR_NAME
   else
@@ -74,8 +81,8 @@ echo -n -e "\e[1;33mTimezone Ex. America/Chicago  :  -- \e[0m ";  read TIME_ZONE
 echo ""
 
 
-php bin/magento setup:install 
---base-url="http://$URL/$DIR_NAME/" \
+php bin/magento setup:install \
+--base-url="http://$URL/$DIR_NAME" \
 --db-host="$DB_HOST_NAME" \
 --db-name="$DB_NAME" \
 --db-user="$DB_USER_ID" \
@@ -88,8 +95,11 @@ php bin/magento setup:install
 --language="$LANG" \
 --currency="$CURR" \
 --timezone="$TIME_ZONE" \
---use-rewrites="1" \
---backend-frontname="admin"
+--use-rewrites=1 \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=es-sales.sajed.com \
+--elasticsearch-port=9200
+
 
 echo "***************************************************************************************************"
 echo ""
