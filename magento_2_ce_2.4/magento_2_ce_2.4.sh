@@ -37,7 +37,7 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws 
 chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 
-if [-z "$MA_EDI"];
+if [ -z "$MA_EDI" ];
   then 
     composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
     composer create-project --repository=https://repo.magento.com/ magento/project-community-edition $DIR_NAME
