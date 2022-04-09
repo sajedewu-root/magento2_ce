@@ -31,12 +31,6 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 composer
 
 
-cd /var/www/html/$DIR_NAME
-find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
-find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-chown -R :www-data . # Ubuntu
-chmod u+x bin/magento
-
 if [ -z "$MA_EDI" ];
   then 
     composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
@@ -45,6 +39,14 @@ if [ -z "$MA_EDI" ];
     composer config -g http-basic.repo.magento.com $MAGENTO_PUBLIC_KEY $MAGENTO_PRIVATE_KEY
     composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=$MA_EDI $DIR_NAME
 fi
+
+
+cd /var/www/html/$DIR_NAME
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+chown -R :www-data . 
+chmod u+x bin/magento
+
 
 chmod -R 777 /var/
 chown -R www-data:www-data /var/www/html/
