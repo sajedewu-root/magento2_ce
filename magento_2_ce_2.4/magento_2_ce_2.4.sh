@@ -99,7 +99,7 @@ php bin/magento setup:install \
 --timezone="$TIME_ZONE" \
 --use-rewrites=1 \
 --search-engine=elasticsearch7 \
---elasticsearch-host=es-sales.sajed.com \
+--elasticsearch-host=localhost:9200 \
 --elasticsearch-port=9200
 
 
