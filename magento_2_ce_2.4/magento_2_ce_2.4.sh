@@ -67,24 +67,24 @@ echo -n -e "Magento 2 Command Line installation process   : -- \e[0m "
 echo ""
 echo "************************************************************************"
 echo ""
-echo -n -e "\e[1;33mMagento URL                   :  -- \e[0m ";  read URL
-echo -n -e "\e[1;33mDatabase Host Name            :  -- \e[0m ";  read DB_HOST_NAME
-echo -n -e "\e[1;33mDatabase Name                 :  -- \e[0m ";  read DB_NAME 
-echo -n -e "\e[1;33mDatabase User                 :  -- \e[0m ";  read DB_USER_ID
-echo -n -e "\e[1;33mDatabse Passowrd              :  -- \e[0m ";  read DB_PASSWORD
-echo -n -e "\e[1;33mAdministrator First Name      :  -- \e[0m ";  read DB_ADMIN_FNAME
-echo -n -e "\e[1;33mAdministrator Last Name       :  -- \e[0m ";  read DB_ADMIN_LNAME
-echo -n -e "\e[1;33mAdministrator Emaill Address  :  -- \e[0m ";  read DB_ADMIN_EMAIL
-echo -n -e "\e[1;33mAdministrator User Id         :  -- \e[0m ";  read DB_ADMIN_ID
-echo -n -e "\e[1;33mAdministrator User Password   :  -- \e[0m ";  read DB_ADMIN_PASSWORD
-echo -n -e "\e[1;33mLanguage                      :  -- \e[0m ";  read LANG
-echo -n -e "\e[1;33mCurrency Ex. USD              :  -- \e[0m ";  read CURR
-echo -n -e "\e[1;33mTimezone Ex. America/Chicago  :  -- \e[0m ";  read TIME_ZONE
+echo -n -e "\e[1;33mMagento URL                       :  -- \e[0m ";  read URL
+echo -n -e "\e[1;33mDatabase Host Name Ex. Localhost  :  -- \e[0m ";  read DB_HOST_NAME
+echo -n -e "\e[1;33mDatabase Name                     :  -- \e[0m ";  read DB_NAME 
+echo -n -e "\e[1;33mDatabase User                     :  -- \e[0m ";  read DB_USER_ID
+echo -n -e "\e[1;33mDatabse Passowrd                  :  -- \e[0m ";  read DB_PASSWORD
+echo -n -e "\e[1;33mAdministrator First Name          :  -- \e[0m ";  read DB_ADMIN_FNAME
+echo -n -e "\e[1;33mAdministrator Last Name           :  -- \e[0m ";  read DB_ADMIN_LNAME
+echo -n -e "\e[1;33mAdministrator Emaill Address      :  -- \e[0m ";  read DB_ADMIN_EMAIL
+echo -n -e "\e[1;33mAdministrator User Id             :  -- \e[0m ";  read DB_ADMIN_ID
+echo -n -e "\e[1;33mAdministrator User Password       :  -- \e[0m ";  read DB_ADMIN_PASSWORD
+echo -n -e "\e[1;33mLanguage                          :  -- \e[0m ";  read LANG
+echo -n -e "\e[1;33mCurrency Ex. USD                  :  -- \e[0m ";  read CURR
+echo -n -e "\e[1;33mTimezone Ex. America/Chicago      :  -- \e[0m ";  read TIME_ZONE
 echo ""
 
 
 php bin/magento setup:install \
---base-url="http://$URL/$DIR_NAME" \
+--base-url="http://$URL/$DIR_NAME/" \
 --db-host="$DB_HOST_NAME" \
 --db-name="$DB_NAME" \
 --db-user="$DB_USER_ID" \
@@ -100,7 +100,8 @@ php bin/magento setup:install \
 --use-rewrites=1 \
 --search-engine=elasticsearch7 \
 --elasticsearch-host=localhost:9200 \
---elasticsearch-port=9200
+--elasticsearch-port=9200 \
+--backend-frontname="admin"
 
 
 echo "***************************************************************************************************"
