@@ -84,7 +84,7 @@ echo ""
 
 
 php bin/magento setup:install \
---base-url="http://$URL/$DIR_NAME/" \
+--base-url="http://$URL/" \
 --db-host="$DB_HOST_NAME" \
 --db-name="$DB_NAME" \
 --db-user="$DB_USER_ID" \
