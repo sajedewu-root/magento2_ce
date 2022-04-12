@@ -50,15 +50,22 @@ chown -R :www-data .
 chmod u+x bin/magento
 
 
+# change the root directory info
+
+sed -i "s+DocumentRoot /var/www/html/mg/+DocumentRoot /var/www/html/$DIR_NAME/+g" /etc/apache2/sites-available/000-default.conf
+
+
 chmod -R 777 /var/
 chown -R www-data:www-data /var/www/html/
 chmod -R 777 /var/
 
-a2ensite 000-default.conf
-a2enmod rewrite
 systemctl stop apache2.service
 systemctl start apache2.service
 systemctl enable apache2.service
+systemctl restart apache2.service		
+a2ensite 000-default.conf
+a2enmod rewrite
+systemctl restart apache2.service
 
 chmod 777 -R /var/
 cd /var/www/html/$DIR_NAME/
