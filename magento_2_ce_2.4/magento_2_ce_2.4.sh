@@ -24,6 +24,8 @@ echo -n -e "\e[1;33mFolder name                   :  -- \e[0m ";  read DIR_NAME
 echo ""
 
 sudo apt update -y
+sudo apt-get update -y
+sudo apt update -y
 sudo apt upgrade -y
 
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
