@@ -53,7 +53,6 @@ chmod u+x bin/magento
 
 
 # change the root directory info
-
 sed -i "s+DocumentRoot /var/www/html/mg/+DocumentRoot /var/www/html/$DIR_NAME/+g" /etc/apache2/sites-available/000-default.conf
 
 
